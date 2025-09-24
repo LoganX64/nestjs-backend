@@ -33,7 +33,7 @@ export class OrdersController {
   @ApiBody({ type: CreateOrderDto })
   create(@Body() orderData: any) {
     return this.httpService
-      .post(this.ordersServiceUrl, orderData) // Orders Service URL
+      .post(this.ordersServiceUrl, orderData)
       .pipe(map((response) => response.data));
   }
 }
