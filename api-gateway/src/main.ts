@@ -9,7 +9,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   // console.log('API_KEY:', configService.get('API_KEY'));
 
-  const globalPrefix = 'api';
+  const globalPrefix = 'api-docs';
   app.setGlobalPrefix(globalPrefix);
   // swagger setup
   const config = new DocumentBuilder()
