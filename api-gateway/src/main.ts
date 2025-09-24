@@ -8,6 +8,12 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
   // console.log('API_KEY:', configService.get('API_KEY'));
+  // const frontendUrl = configService.get<string>('FRONTEND_URL');
+  app.enableCors({
+    // origin: frontendUrl, // your frontend URL
+    // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    // credentials: true,
+  });
 
   const globalPrefix = 'api-docs';
   app.setGlobalPrefix(globalPrefix);

@@ -54,6 +54,7 @@ services:
     environment:
       PRODUCTS_SERVICE_URL: http://product-service:3001/products
       ORDERS_SERVICE_URL: http://order-service:3002/orders
+      FRONTEND_SERVICE_URL: http://localhost:5173
       API_KEY: supersecret123
     depends_on:
       - product-service

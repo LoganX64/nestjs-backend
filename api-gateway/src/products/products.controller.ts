@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Put,
 } from '@nestjs/common';
@@ -12,6 +13,8 @@ import { map } from 'rxjs/operators';
 import { firstValueFrom } from 'rxjs';
 import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { CreateProductDto } from 'shared/create-product.dto';
+import { UpdateProductDto } from 'shared/update-product.dto';
+import { patch } from 'axios';
 
 @Controller('products')
 @ApiTags('products')
@@ -46,13 +49,13 @@ export class ProductsController {
     return response.data;
   }
 
-  @Put(':id')
+  @Patch(':id')
   @ApiOperation({ summary: 'Update a product by ID' })
   @ApiParam({ name: 'id', type: 'string' })
-  @ApiBody({ type: CreateProductDto })
-  async updateProduct(@Param('id') id: string, @Body() body: any) {
+  @ApiBody({ type: UpdateProductDto })
+  async updateProduct(@Param('id') id: string, @Body() body: UpdateProductDto) {
     const response = await firstValueFrom(
-      this.httpService.put(`${this.productsServiceUrl}/${id}`, body),
+      this.httpService.patch(`${this.productsServiceUrl}/${id}`, body),
     );
     return response.data;
   }
