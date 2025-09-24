@@ -45,7 +45,7 @@ async function bootstrap() {
     ]),
   );
 
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup(globalPrefix, app, document);
 
   await app.listen(configService.get('PORT') || 3000);
 }

@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { map } from 'rxjs/operators';
 import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { CreateOrderDto } from 'shared/create-order.dto';
+import { CreateOrderDto } from '../shared/create-order.dto';
 
 @Controller('orders')
 @ApiTags('orders')

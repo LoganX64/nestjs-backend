@@ -12,9 +12,8 @@ import { HttpService } from '@nestjs/axios';
 import { map } from 'rxjs/operators';
 import { firstValueFrom } from 'rxjs';
 import { ApiBody, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { CreateProductDto } from 'shared/create-product.dto';
-import { UpdateProductDto } from 'shared/update-product.dto';
-import { patch } from 'axios';
+import { CreateProductDto } from '../shared/create-product.dto';
+import { UpdateProductDto } from '../shared/update-product.dto';
 
 @Controller('products')
 @ApiTags('products')
