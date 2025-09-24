@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { map } from 'rxjs/operators';
 import { firstValueFrom } from 'rxjs';
@@ -34,6 +34,16 @@ export class ProductsController {
   async createProduct(@Body() body: any) {
     const response = await firstValueFrom(
       this.httpService.post(this.productsServiceUrl, body),
+    );
+    return response.data;
+  }
+
+  @Delete(':id')
+  @ApiOperation({ summary: 'Delete product by ID' })
+  @ApiParam({ name: 'id', type: 'string' })
+  async deleteProduct(@Param('id') id: string) {
+    const response = await firstValueFrom(
+      this.httpService.delete(`${this.productsServiceUrl}/${id}`),
     );
     return response.data;
   }
