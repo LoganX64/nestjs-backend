@@ -1,16 +1,138 @@
-# React + Vite
+# 🛍️ E-Commerce Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple e-commerce frontend built with **React, Vite, TailwindCSS, and Axios**.  
+It provides **Products** and **Orders** pages with API integration to a backend (NestJS).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- 📦 View Products
+- 🛒 Create Orders
+- 📃 View Orders
+- 🔗 API integration with backend
+- 🎨 Styled with TailwindCSS + DaisyUI
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+ ├── api/            # API service (axios)
+ ├── components/     # Reusable UI components
+ ├── pages/          # Products & Orders pages
+ ├── App.jsx         # Main app entry
+ ├── main.jsx        # React root
+```
+
+---
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/ecommerce-frontend.git
+cd ecommerce-frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Run the Project
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+By default, it runs at:
+
+👉 [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 🔌 Backend Setup
+
+This project expects a backend running at:
+
+```
+http://localhost:3000
+```
+
+### Example API Endpoints:
+
+- `GET /products` → Fetch all products
+- `GET /products/:id` → Fetch single product
+- `POST /products` → Create a product
+- `DELETE /products/:id` → Delete a product
+- `GET /orders` → Fetch all orders
+- `POST /orders` → Create new order
+
+Make sure your backend is running before starting the frontend.
+
+---
+
+## 🖼️ Sample Products
+
+Here are 5 sample product details with image links you can seed in your backend:
+
+```json
+[
+  {
+    "name": "Wireless Headphones",
+    "price": 1999,
+    "description": "Noise-cancelling over-ear headphones with deep bass.",
+    "image": "https://picsum.photos/200/200?random=1"
+  },
+  {
+    "name": "Smartwatch Pro",
+    "price": 3499,
+    "description": "Fitness tracking smartwatch with AMOLED display.",
+    "image": "https://picsum.photos/200/200?random=2"
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": 1499,
+    "description": "High precision RGB gaming mouse with 7 buttons.",
+    "image": "https://picsum.photos/200/200?random=3"
+  },
+  {
+    "name": "Bluetooth Speaker",
+    "price": 2299,
+    "description": "Portable waterproof Bluetooth speaker.",
+    "image": "https://picsum.photos/200/200?random=4"
+  },
+  {
+    "name": "Mechanical Keyboard",
+    "price": 4999,
+    "description": "RGB mechanical keyboard with blue switches.",
+    "image": "https://picsum.photos/200/200?random=5"
+  }
+]
+```
+
+---
+
+## ✅ Available Scripts
+
+- `npm run dev` → Start dev server
+- `npm run build` → Build for production
+- `npm run preview` → Preview production build
+
+---
+
+## 📌 Notes
+
+- Update `src/api/index.js` if backend URL changes.
+- Tailwind + DaisyUI already configured.
+- LocalStorage can be used for storing `API_KEY` if authentication is needed.
+
+---
