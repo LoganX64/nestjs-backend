@@ -26,8 +26,8 @@ export class ApiKeyMiddleware implements NestMiddleware {
     const apiKey = req.header('x-api-key');
     const expectedKey = this.configService.get<string>('API_KEY'); // use ConfigService
 
-    console.log('Received API_KEY:', apiKey); // debug log
-    console.log('Expected API_KEY:', expectedKey); // debug log
+    // console.log('Received API_KEY:', apiKey); // debug log
+    // console.log('Expected API_KEY:', expectedKey); // debug log
 
     if (!apiKey || apiKey !== expectedKey) {
       throw new UnauthorizedException('Invalid API Key');
