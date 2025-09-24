@@ -38,6 +38,17 @@ export class ProductsController {
     return response.data;
   }
 
+  @Put(':id')
+  @ApiOperation({ summary: 'Update a product by ID' })
+  @ApiParam({ name: 'id', type: 'string' })
+  @ApiBody({ type: CreateProductDto })
+  async updateProduct(@Param('id') id: string, @Body() body: any) {
+    const response = await firstValueFrom(
+      this.httpService.put(`${this.productsServiceUrl}/${id}`, body),
+    );
+    return response.data;
+  }
+
   @Delete(':id')
   @ApiOperation({ summary: 'Delete product by ID' })
   @ApiParam({ name: 'id', type: 'string' })
